@@ -28,7 +28,7 @@ poid fichier : 21/22mo
 Calcul de la résolution au sol :
 
 Qualité pour sol :
- 
+
 Qualité pour toiture :
 
 Qualité maraichage :
@@ -40,6 +40,8 @@ Qualité foret :
 mm3d Tapioca MulScale ".*.ARW" 300 1200
 ~~~
 Analyse des résultats : 
+
+
 
 ### Tapas
 
@@ -160,7 +162,7 @@ To avoid such holes in your model, you could :
 
 - Take more (or better) pictures
 - Play on the correlation coefficient (DefCor=0 for example during Malt)
-Il n'y a donc pas d'option pour densifier un BigMac, même si les options DefCor et ZReg (issues de Malt) peuvent permettre d'affiner un résultat.
+  Il n'y a donc pas d'option pour densifier un BigMac, même si les options DefCor et ZReg (issues de Malt) peuvent permettre d'affiner un résultat.
 
 ~~~
 mm3d Malt Ortho ".*.JPG" RadialSTD  ImOrtho=".*.JPG" Repere=RepereOrtho.xml DefCor=0 DirMEC=Malt_DefCor0
@@ -195,18 +197,18 @@ générer MTDOrtho.xml
 
 <?xml version="1.0" ?>
 	<FileOriMnt>
-      <NameFileMnt>NO</NameFileMnt>
-      <NombrePixels>13910 8595</NombrePixels>
-      <OriginePlani>-19.8935 23.991</OriginePlani>
-      <ResolutionPlani>0.00275 -0.00275</ResolutionPlani>
-      <OrigineAlti>-10.428</OrigineAlti>
-      <ResolutionAlti>0.0055</ResolutionAlti>
-      <Geometrie>eGeomMNTEuclid</Geometrie>
+	  <NameFileMnt>NO</NameFileMnt>
+	  <NombrePixels>13910 8595</NombrePixels>
+	  <OriginePlani>-19.8935 23.991</OriginePlani>
+	  <ResolutionPlani>0.00275 -0.00275</ResolutionPlani>
+	  <OrigineAlti>-10.428</OrigineAlti>
+	  <ResolutionAlti>0.0055</ResolutionAlti>
+	  <Geometrie>eGeomMNTEuclid</Geometrie>
 	</FileOriMnt>
 
 
 
-	
+
 dans mon cas il ne le trouve toujours pas...relou
 
 du coup j'utilise PIMS
