@@ -113,18 +113,29 @@ Calibrer les 3 sets d'images (car 3 caméras)
 ~~~	
 Tapas RadialExtended "IMG_4(789|799|800|801|802).CR2" Out=iniCalib
 Tapas RadialExtended "IMG_05(35|33|31|29|47).JPG" Out=iniCalib
-Tapas RadialExtended "DSC_005(27|28|47|48).ARW" Out=iniCalib
+Tapas RadialExtended "DSC005(27|28|47|48).ARW" Out=iniCalib
 
 ~~~
+
+puis on fait l'orientation relative sur toutes les images
+
 ~~~
-mm3d Tapas RadialStd ".*.ARW" InOri=Ini Out=Allori
+mm3d Tapas AutoCal ".*.(ARW|CR2|JPG)" InOri=iniCalib Out=Allori
 ~~~
+
+Résultat : il semblerait que la calbration interne de la camera 700D soit mal effectuée (manque d'images d'une même scène pour effectuer la calibration)
+
+temps de traitement : 5839.17 s
+
+
 
 ### AperiCloud
 
 ~~~
-mm3d AperiCloud "photo/.*.ARW" Allori
+mm3d AperiCloud ".*.(ARW|CR2|JPG)" Allori
 ~~~
+
+temps de traitement : 13846 sec
 
 ### Tarama 
 
