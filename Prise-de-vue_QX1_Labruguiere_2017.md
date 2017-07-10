@@ -41,20 +41,80 @@ mm3d Tapioca MulScale ".*.ARW" 300 1200
 ~~~
 Analyse des résultats : 
 
-
+~~~
+mm3d SEL ./ IMAGE1 IMAGE2 KH=NB
+~~~
 
 ### Tapas
 
-Définition de qx1 dans dicocamera.xml
+Définition de qx1 dans un nouveau fichier MicMac-LocalChantierDescripteur.xml localisé à la racine du projet.
 
-	<CameraEntry>
-		<Name>  Sony ILCE-QX1 </Name>
-		<SzCaptMm>   16.0 24.0  </SzCaptMm>
-		<ShortName> QX1  </ShortName>
-	</CameraEntry>
+~~~
+<Global>
+  <ChantierDescripteur >
 
+ <!-- Define a camera model (name and sensor/film size) -->
+    <LocCamDataBase>
+   <CameraEntry>
+         <Name>  ILCE-QX1 </Name>
+   		 <SzCaptMm>  15.40 23.20 </SzCaptMm>
+   		 <ShortName> QX1 </ShortName>
+   </CameraEntry>
+
+   <CameraEntry>
+         <Name>  Canon EOS 700D </Name>
+   		 <SzCaptMm>   22.3 14.9  </SzCaptMm>
+   		 <ShortName> C700D  </ShortName>
+   </CameraEntry>
+
+    </LocCamDataBase>
+
+	<KeyedNamesAssociations>
+	<Calcs>
+	<Arrite> 1 1 </Arrite>
+	<Direct>
+	<PatternTransform> .*.JPG </PatternTransform>
+	<CalcName> 80.0 </CalcName>
+	</Direct>
+	</Calcs>
+	<Calcs>
+	<Arrite> 1 1 </Arrite>
+	<Direct>
+	<PatternTransform> .*.CR2 </PatternTransform>
+	<CalcName> 50.0 </CalcName>
+	</Direct>
+	</Calcs>
+	<Calcs>
+	<Arrite> 1 1 </Arrite>
+	<Direct>
+	<PatternTransform> .*.ARW </PatternTransform>
+	<CalcName> 24.0 </CalcName>
+	</Direct>
+	</Calcs>
+	
+	<Calcs>
+	<Arrite> 1 1 </Arrite>
+	<Direct>
+	<PatternTransform> .* </PatternTransform>
+	<CalcName>0</CalcName>
+	</Direct>
+	</Calcs>
+
+
+
+<Key> NKS-Assoc-STD-FOC </Key>
+</KeyedNamesAssociations>
+
+  </ChantierDescripteur>
+</Global>
+~~~
+
+Calibrer les 3 sets d'images (car 3 caméras)
 ~~~	
-mm3d Tapas RadialStd "DSC000(74|73|85|86|93|94).ARW" Out='Ini'
+Tapas RadialExtended "IMG_4(789|799|800|801|802).CR2" Out=iniCalib
+Tapas RadialExtended "IMG_05(35|33|31|29|47).JPG" Out=iniCalib
+Tapas RadialExtended "DSC_005(27|28|47|48).ARW" Out=iniCalib
+
 ~~~
 ~~~
 mm3d Tapas RadialStd ".*.ARW" InOri=Ini Out=Allori
